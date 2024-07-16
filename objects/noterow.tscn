@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://cb0f1skg88m7"]
+
+[ext_resource type="FontFile" uid="uid://vvkhkmf30u3e" path="res://fonts/pretendard_regular.woff2" id="1_edbwd"]
+[ext_resource type="Script" path="res://objects/noterow.gd" id="1_n6hws"]
+
+[sub_resource type="FontVariation" id="FontVariation_1vi73"]
+base_font = ExtResource("1_edbwd")
+opentype_features = {
+1718772067: 1
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_1e1kf"]
+font = SubResource("FontVariation_1vi73")
+font_size = 105
+
+[sub_resource type="FontVariation" id="FontVariation_qdxxb"]
+base_font = ExtResource("1_edbwd")
+variation_embolden = 0.75
+
+[sub_resource type="LabelSettings" id="LabelSettings_cpe1l"]
+font = SubResource("FontVariation_qdxxb")
+font_size = 32
+
+[node name="Noterow" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 130)
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+script = ExtResource("1_n6hws")
+
+[node name="Prefix" type="Control" parent="."]
+layout_mode = 2
+
+[node name="FractionMark" type="Label" parent="Prefix"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+grow_horizontal = 0
+text = "4/4"
+label_settings = SubResource("LabelSettings_1e1kf")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BpmMark" type="Label" parent="Prefix"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "120BPM"
+label_settings = SubResource("LabelSettings_cpe1l")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NoteContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Postfix" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0

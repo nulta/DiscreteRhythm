@@ -1,0 +1,490 @@
+[gd_scene load_steps=36 format=3 uid="uid://qetrutehg6b3"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_tpuoo"]
+[ext_resource type="AudioStream" uid="uid://lal4xsp7nbgh" path="res://scenes/apocalypse_doors.ogg" id="2_a7ijl"]
+[ext_resource type="PackedScene" uid="uid://cb0f1skg88m7" path="res://objects/noterow.tscn" id="3_3xx2v"]
+[ext_resource type="Script" path="res://scripts/semi_noterow.gd" id="4_h3fgp"]
+[ext_resource type="Script" path="res://scripts/note_data.gd" id="5_pj5fd"]
+
+[sub_resource type="Resource" id="Resource_qbkts"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.25
+long_note = false
+note_type = 0
+text = "1"
+
+[sub_resource type="Resource" id="Resource_w58vi"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.25
+long_note = false
+note_type = 0
+text = "2"
+
+[sub_resource type="Resource" id="Resource_4t11a"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.25
+long_note = false
+note_type = 0
+text = "3"
+
+[sub_resource type="Resource" id="Resource_heqs4"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.25
+long_note = false
+note_type = 0
+text = "4"
+
+[sub_resource type="Resource" id="Resource_wy74v"]
+script = ExtResource("4_h3fgp")
+up = Array[ExtResource("5_pj5fd")]([SubResource("Resource_qbkts"), SubResource("Resource_w58vi"), SubResource("Resource_4t11a"), SubResource("Resource_heqs4")])
+down = Array[ExtResource("5_pj5fd")]([])
+
+[sub_resource type="Resource" id="Resource_2w8nj"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.5
+long_note = true
+note_type = 3
+text = ""
+
+[sub_resource type="Resource" id="Resource_v0bo1"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.25
+long_note = false
+note_type = 0
+text = ""
+
+[sub_resource type="Resource" id="Resource_tb2ir"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.25
+long_note = false
+note_type = 0
+text = ""
+
+[sub_resource type="Resource" id="Resource_xfai4"]
+script = ExtResource("4_h3fgp")
+up = Array[ExtResource("5_pj5fd")]([SubResource("Resource_2w8nj"), SubResource("Resource_v0bo1"), SubResource("Resource_tb2ir")])
+down = Array[ExtResource("5_pj5fd")]([])
+
+[sub_resource type="Resource" id="Resource_v5e1v"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.25
+long_note = false
+note_type = 0
+text = ""
+
+[sub_resource type="Resource" id="Resource_m7670"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.25
+long_note = false
+note_type = 1
+text = ""
+
+[sub_resource type="Resource" id="Resource_ys27q"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.25
+long_note = false
+note_type = 0
+text = ""
+
+[sub_resource type="Resource" id="Resource_33tud"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.25
+long_note = false
+note_type = 2
+text = ""
+
+[sub_resource type="Resource" id="Resource_gokaf"]
+script = ExtResource("4_h3fgp")
+up = Array[ExtResource("5_pj5fd")]([SubResource("Resource_v5e1v"), SubResource("Resource_m7670"), SubResource("Resource_ys27q"), SubResource("Resource_33tud")])
+down = Array[ExtResource("5_pj5fd")]([])
+
+[sub_resource type="Resource" id="Resource_y1s6u"]
+script = ExtResource("4_h3fgp")
+up = Array[ExtResource("5_pj5fd")]([SubResource("Resource_qbkts"), SubResource("Resource_w58vi"), SubResource("Resource_4t11a"), SubResource("Resource_heqs4")])
+down = Array[ExtResource("5_pj5fd")]([])
+
+[sub_resource type="Resource" id="Resource_8nxea"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.25
+long_note = false
+note_type = 3
+text = ""
+
+[sub_resource type="Resource" id="Resource_m3t1p"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.25
+long_note = false
+note_type = 2
+text = ""
+
+[sub_resource type="Resource" id="Resource_uau2d"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.125
+long_note = false
+note_type = 0
+text = ""
+
+[sub_resource type="Resource" id="Resource_ce2ff"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.125
+long_note = false
+note_type = 1
+text = ""
+
+[sub_resource type="Resource" id="Resource_81w1a"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.25
+long_note = false
+note_type = 2
+text = ""
+
+[sub_resource type="Resource" id="Resource_hjg47"]
+script = ExtResource("4_h3fgp")
+up = Array[ExtResource("5_pj5fd")]([SubResource("Resource_8nxea"), SubResource("Resource_m3t1p"), SubResource("Resource_uau2d"), SubResource("Resource_ce2ff"), SubResource("Resource_81w1a")])
+down = Array[ExtResource("5_pj5fd")]([])
+
+[sub_resource type="Resource" id="Resource_cnr07"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.125
+long_note = false
+note_type = 0
+text = ""
+
+[sub_resource type="Resource" id="Resource_ism67"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.125
+long_note = false
+note_type = 2
+text = ""
+
+[sub_resource type="Resource" id="Resource_en058"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.125
+long_note = false
+note_type = 0
+text = ""
+
+[sub_resource type="Resource" id="Resource_7yo7c"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.125
+long_note = false
+note_type = 2
+text = ""
+
+[sub_resource type="Resource" id="Resource_efqhl"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.125
+long_note = false
+note_type = 0
+text = ""
+
+[sub_resource type="Resource" id="Resource_ujqba"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.125
+long_note = false
+note_type = 2
+text = ""
+
+[sub_resource type="Resource" id="Resource_deeib"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.125
+long_note = false
+note_type = 0
+text = ""
+
+[sub_resource type="Resource" id="Resource_d5k2o"]
+script = ExtResource("5_pj5fd")
+beat_ratio = 0.125
+long_note = false
+note_type = 2
+text = ""
+
+[sub_resource type="Resource" id="Resource_wpvho"]
+script = ExtResource("4_h3fgp")
+up = Array[ExtResource("5_pj5fd")]([SubResource("Resource_cnr07"), SubResource("Resource_ism67"), SubResource("Resource_en058"), SubResource("Resource_7yo7c"), SubResource("Resource_efqhl"), SubResource("Resource_ujqba"), SubResource("Resource_deeib"), SubResource("Resource_d5k2o")])
+down = Array[ExtResource("5_pj5fd")]([])
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_tpuoo")
+
+[node name="Camera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(576, 65)
+position_smoothing_enabled = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_a7ijl")
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0392157, 0.0588235, 0.0745098, 1)
+
+[node name="Noteboard" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_right = 1153.0
+offset_bottom = 651.0
+theme_override_constants/separation = 40
+
+[node name="Noterow1" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_wy74v")])
+prefix_fraction = "4/4"
+prefix_bpm = 145
+
+[node name="Noterow2" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow3" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow4" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow5" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow6" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow7" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow8" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_gokaf")])
+
+[node name="Noterow9" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow10" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_gokaf")])
+
+[node name="Noterow11" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow12" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_gokaf")])
+
+[node name="Noterow13" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow14" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_gokaf")])
+
+[node name="Noterow15" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow16" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_gokaf")])
+
+[node name="Noterow17" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_y1s6u")])
+
+[node name="Noterow18" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow19" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow20" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow21" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow22" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow23" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow24" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_gokaf")])
+
+[node name="Noterow25" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow26" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_gokaf")])
+
+[node name="Noterow27" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow28" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_gokaf")])
+
+[node name="Noterow29" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow30" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_gokaf")])
+
+[node name="Noterow31" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow32" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_gokaf")])
+
+[node name="Noterow33" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_gokaf")])
+
+[node name="Noterow34" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_wpvho")])
+
+[node name="Noterow35" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_wpvho")])
+
+[node name="Noterow36" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_wpvho")])
+
+[node name="Noterow37" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_wpvho")])
+
+[node name="Noterow38" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_wpvho")])
+
+[node name="Noterow39" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_wpvho")])
+
+[node name="Noterow40" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_wpvho")])
+
+[node name="Noterow41" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_wpvho")])
+
+[node name="Noterow42" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([null])
+
+[node name="Noterow43" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([null])
+
+[node name="Noterow52" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow53" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow44" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow45" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow46" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow47" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow48" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow49" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow50" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow51" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow54" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow55" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow56" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow57" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow58" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow59" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_hjg47"), null, null])
+
+[node name="Noterow60" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow61" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow62" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="Noterow63" parent="Noteboard" instance=ExtResource("3_3xx2v")]
+layout_mode = 2
+semi_rows = Array[ExtResource("4_h3fgp")]([SubResource("Resource_xfai4")])
+
+[node name="HitFeedbacks" type="Node2D" parent="."]
+unique_name_in_owner = true

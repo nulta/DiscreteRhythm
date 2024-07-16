@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://bn1w2pkpclopj"]
+
+[ext_resource type="Script" path="res://objects/hit_feedback.gd" id="1_dfhpd"]
+[ext_resource type="FontFile" uid="uid://vvkhkmf30u3e" path="res://fonts/pretendard_regular.woff2" id="2_axhaf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7genk"]
+font = ExtResource("2_axhaf")
+font_size = 35
+outline_size = 5
+outline_color = Color(0, 0, 0, 0.207843)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l3rv0"]
+font = ExtResource("2_axhaf")
+font_size = 30
+font_color = Color(1, 1, 1, 0.811765)
+outline_size = 5
+outline_color = Color(0, 0, 0, 0.207843)
+
+[sub_resource type="Gradient" id="Gradient_ovq05"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.945098)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.45098)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_frjs2"]
+gradient = SubResource("Gradient_ovq05")
+width = 11
+height = 11
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Curve" id="Curve_2dbit"]
+max_value = 200.0
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.0378007, 200), 0.0, 0.0, 0, 0, Vector2(0.0515464, 8.34492), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_jfl8b"]
+offsets = PackedFloat32Array(0.48289, 0.988593)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="HitFeedback" type="Node2D"]
+script = ExtResource("1_dfhpd")
+
+[node name="Text" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -94.0
+offset_right = 53.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Perfect!"
+label_settings = SubResource("LabelSettings_7genk")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Offset" type="Label" parent="Text"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -71.0
+offset_right = 53.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "77"
+label_settings = SubResource("LabelSettings_l3rv0")
+horizontal_alignment = 1
+
+[node name="Particle" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+amount = 32
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.5
+texture = SubResource("GradientTexture2D_frjs2")
+emission_shape = 3
+emission_rect_extents = Vector2(50, 50)
+direction = Vector2(0, -1)
+spread = 33.39
+initial_velocity_min = 309.68
+initial_velocity_max = 309.68
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+radial_accel_min = 13.88
+radial_accel_max = 13.88
+radial_accel_curve = SubResource("Curve_2dbit")
+angle_min = -180.0
+angle_max = 180.0
+color = Color(0, 1, 0.8, 0.952941)
+color_ramp = SubResource("Gradient_jfl8b")

@@ -1,0 +1,137 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxs4vilmgpot3"]
+
+[ext_resource type="Script" path="res://objects/note.gd" id="1_5bfje"]
+[ext_resource type="Texture2D" uid="uid://dpxuv74ltcct3" path="res://sprites/continous_identifier.png" id="2_v4e2c"]
+[ext_resource type="FontFile" uid="uid://vvkhkmf30u3e" path="res://fonts/pretendard_regular.woff2" id="3_irmwc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ewb0"]
+font = ExtResource("3_irmwc")
+font_size = 80
+font_color = Color(1, 1, 1, 0.501961)
+
+[node name="Note" type="ColorRect"]
+clip_contents = true
+custom_minimum_size = Vector2(130, 0)
+offset_right = 130.0
+offset_bottom = 130.0
+size_flags_horizontal = 0
+color = Color(0.2, 0.2, 0.2, 1)
+script = ExtResource("1_5bfje")
+
+[node name="LongNoteIdentifier" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="LongNoteIdentifierUp" type="TextureRect" parent="LongNoteIdentifier"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 10.0
+grow_horizontal = 2
+texture = ExtResource("2_v4e2c")
+stretch_mode = 1
+
+[node name="LongNoteIdentifierDown" type="TextureRect" parent="LongNoteIdentifier"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_v4e2c")
+stretch_mode = 1
+
+[node name="CenterLine" type="ColorRect" parent="LongNoteIdentifier"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ArrowClipper" type="Control" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="ArrowClipper"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+size_flags_horizontal = 6
+
+[node name="Arrow" type="Control" parent="ArrowClipper/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Text" type="Label" parent="ArrowClipper/CenterContainer/Arrow"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_5ewb0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left1" type="Line2D" parent="ArrowClipper/CenterContainer/Arrow"]
+visible = false
+points = PackedVector2Array(20, -40, -20, 0, 20, 40)
+antialiased = true
+
+[node name="Left2" type="Line2D" parent="ArrowClipper/CenterContainer/Arrow"]
+visible = false
+position = Vector2(28, 0)
+points = PackedVector2Array(20, -40, -20, 0, 20, 40)
+antialiased = true
+
+[node name="Right1" type="Line2D" parent="ArrowClipper/CenterContainer/Arrow"]
+visible = false
+points = PackedVector2Array(-20, -40, 20, 0, -20, 40)
+antialiased = true
+
+[node name="Right2" type="Line2D" parent="ArrowClipper/CenterContainer/Arrow"]
+visible = false
+position = Vector2(-28, 0)
+points = PackedVector2Array(-20, -40, 20, 0, -20, 40)
+antialiased = true
+
+[node name="Space" type="Line2D" parent="ArrowClipper/CenterContainer/Arrow"]
+visible = false
+rotation = -1.5708
+points = PackedVector2Array(20, -40, -20, 0, 20, 40)
+antialiased = true
