@@ -11,7 +11,7 @@ enum NoteType {
 	LEFT_RIGHT,
 }
 
-@export_range(0.0, 1.0, 1/32.0)
+@export_range(0.0, 1.0, 1/16.0)
 var beat_ratio: float = 1/4.0
 
 @export var long_note: bool = false
