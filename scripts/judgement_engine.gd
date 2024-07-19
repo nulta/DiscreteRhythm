@@ -18,7 +18,7 @@ var time_margin_bad: float     = 3/24.0
 var time_margin_great: float    = 2/24.0
 var time_margin_perfect: float = 1/24.0
 
-var judgement_time_offset = 0.00
+var judgement_time_offset = -0.02
 
 var _judgement_table: Array[JudgementItem] = []
 var _judgement_current: Array[JudgementItem] = []
