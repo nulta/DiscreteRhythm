@@ -1,4 +1,4 @@
-[gd_scene load_steps=416 format=3 uid="uid://u4to2trdpgda"]
+[gd_scene load_steps=424 format=3 uid="uid://u4to2trdpgda"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_dj1aa"]
 [ext_resource type="PackedScene" uid="uid://cb0f1skg88m7" path="res://objects/noterow.tscn" id="1_hrhra"]
@@ -42,30 +42,16 @@ down = Array[ExtResource("3_ve1k7")]([])
 
 [sub_resource type="Resource" id="Resource_1k5h2"]
 script = ExtResource("3_ve1k7")
-beat_ratio = 0.125
+beat_ratio = 0.25
 long_note = true
 note_type = 2
-text = ""
-
-[sub_resource type="Resource" id="Resource_hatic"]
-script = ExtResource("3_ve1k7")
-beat_ratio = 0.125
-long_note = false
-note_type = 0
 text = ""
 
 [sub_resource type="Resource" id="Resource_i5r1j"]
 script = ExtResource("3_ve1k7")
-beat_ratio = 0.125
+beat_ratio = 0.25
 long_note = true
 note_type = 2
-text = ""
-
-[sub_resource type="Resource" id="Resource_n6e0m"]
-script = ExtResource("3_ve1k7")
-beat_ratio = 0.125
-long_note = false
-note_type = 0
 text = ""
 
 [sub_resource type="Resource" id="Resource_tls0w"]
@@ -84,7 +70,7 @@ text = ""
 
 [sub_resource type="Resource" id="Resource_ip6aw"]
 script = ExtResource("2_31vpj")
-up = Array[ExtResource("3_ve1k7")]([SubResource("Resource_1k5h2"), SubResource("Resource_hatic"), SubResource("Resource_i5r1j"), SubResource("Resource_n6e0m"), SubResource("Resource_tls0w"), SubResource("Resource_e05c5")])
+up = Array[ExtResource("3_ve1k7")]([SubResource("Resource_1k5h2"), SubResource("Resource_i5r1j"), SubResource("Resource_tls0w"), SubResource("Resource_e05c5")])
 down = Array[ExtResource("3_ve1k7")]([])
 
 [sub_resource type="Resource" id="Resource_pgf7k"]
@@ -418,7 +404,7 @@ down = Array[ExtResource("3_ve1k7")]([])
 [sub_resource type="Resource" id="Resource_slcn1"]
 script = ExtResource("3_ve1k7")
 beat_ratio = 0.125
-long_note = true
+long_note = false
 note_type = 1
 text = ""
 
@@ -539,28 +525,28 @@ down = Array[ExtResource("3_ve1k7")]([])
 script = ExtResource("3_ve1k7")
 beat_ratio = 0.25
 long_note = false
-note_type = 0
+note_type = 3
 text = ""
 
 [sub_resource type="Resource" id="Resource_ioq2j"]
 script = ExtResource("3_ve1k7")
 beat_ratio = 0.25
 long_note = false
-note_type = 0
+note_type = 2
 text = ""
 
 [sub_resource type="Resource" id="Resource_dw27x"]
 script = ExtResource("3_ve1k7")
 beat_ratio = 0.25
 long_note = false
-note_type = 0
+note_type = 3
 text = ""
 
 [sub_resource type="Resource" id="Resource_xhxvb"]
 script = ExtResource("3_ve1k7")
 beat_ratio = 0.25
 long_note = false
-note_type = 0
+note_type = 3
 text = ""
 
 [sub_resource type="Resource" id="Resource_oqp51"]
@@ -596,7 +582,14 @@ down = Array[ExtResource("3_ve1k7")]([])
 
 [sub_resource type="Resource" id="Resource_gb2i5"]
 script = ExtResource("3_ve1k7")
-beat_ratio = 0.25
+beat_ratio = 0.125
+long_note = false
+note_type = 2
+text = ""
+
+[sub_resource type="Resource" id="Resource_4gbbs"]
+script = ExtResource("3_ve1k7")
+beat_ratio = 0.125
 long_note = false
 note_type = 0
 text = ""
@@ -605,26 +598,33 @@ text = ""
 script = ExtResource("3_ve1k7")
 beat_ratio = 0.25
 long_note = false
+note_type = 1
+text = ""
+
+[sub_resource type="Resource" id="Resource_gbopk"]
+script = ExtResource("3_ve1k7")
+beat_ratio = 0.125
+long_note = false
 note_type = 0
 text = ""
 
 [sub_resource type="Resource" id="Resource_yxg5n"]
 script = ExtResource("3_ve1k7")
-beat_ratio = 0.25
+beat_ratio = 0.125
 long_note = false
-note_type = 0
+note_type = 1
 text = ""
 
 [sub_resource type="Resource" id="Resource_rnjqa"]
 script = ExtResource("3_ve1k7")
 beat_ratio = 0.25
 long_note = false
-note_type = 0
+note_type = 1
 text = ""
 
 [sub_resource type="Resource" id="Resource_r8jnv"]
 script = ExtResource("2_31vpj")
-up = Array[ExtResource("3_ve1k7")]([SubResource("Resource_gb2i5"), SubResource("Resource_yugl8"), SubResource("Resource_yxg5n"), SubResource("Resource_rnjqa")])
+up = Array[ExtResource("3_ve1k7")]([SubResource("Resource_gb2i5"), SubResource("Resource_4gbbs"), SubResource("Resource_yugl8"), SubResource("Resource_gbopk"), SubResource("Resource_yxg5n"), SubResource("Resource_rnjqa")])
 down = Array[ExtResource("3_ve1k7")]([])
 
 [sub_resource type="Resource" id="Resource_6ph10"]
@@ -638,21 +638,21 @@ text = ""
 script = ExtResource("3_ve1k7")
 beat_ratio = 0.25
 long_note = false
-note_type = 0
+note_type = 2
 text = ""
 
 [sub_resource type="Resource" id="Resource_obegs"]
 script = ExtResource("3_ve1k7")
 beat_ratio = 0.25
 long_note = false
-note_type = 0
+note_type = 1
 text = ""
 
 [sub_resource type="Resource" id="Resource_o3aia"]
 script = ExtResource("3_ve1k7")
 beat_ratio = 0.25
 long_note = false
-note_type = 0
+note_type = 3
 text = ""
 
 [sub_resource type="Resource" id="Resource_14ory"]
@@ -664,66 +664,122 @@ down = Array[ExtResource("3_ve1k7")]([])
 script = ExtResource("3_ve1k7")
 beat_ratio = 0.25
 long_note = false
-note_type = 0
+note_type = 2
 text = ""
 
 [sub_resource type="Resource" id="Resource_ei5s2"]
 script = ExtResource("3_ve1k7")
-beat_ratio = 0.25
+beat_ratio = 0.1875
 long_note = false
-note_type = 0
+note_type = 1
 text = ""
 
 [sub_resource type="Resource" id="Resource_2f4y0"]
 script = ExtResource("3_ve1k7")
-beat_ratio = 0.25
+beat_ratio = 0.0625
 long_note = false
-note_type = 0
+note_type = 1
 text = ""
 
 [sub_resource type="Resource" id="Resource_bnjxb"]
 script = ExtResource("3_ve1k7")
-beat_ratio = 0.25
+beat_ratio = 0.125
 long_note = false
-note_type = 0
+note_type = 2
+text = ""
+
+[sub_resource type="Resource" id="Resource_yks4k"]
+script = ExtResource("3_ve1k7")
+beat_ratio = 0.125
+long_note = false
+note_type = 1
+text = ""
+
+[sub_resource type="Resource" id="Resource_lj0cw"]
+script = ExtResource("3_ve1k7")
+beat_ratio = 0.125
+long_note = false
+note_type = 1
+text = ""
+
+[sub_resource type="Resource" id="Resource_gk5h2"]
+script = ExtResource("3_ve1k7")
+beat_ratio = 0.125
+long_note = false
+note_type = 1
 text = ""
 
 [sub_resource type="Resource" id="Resource_qim5j"]
 script = ExtResource("2_31vpj")
-up = Array[ExtResource("3_ve1k7")]([SubResource("Resource_umv4t"), SubResource("Resource_ei5s2"), SubResource("Resource_2f4y0"), SubResource("Resource_bnjxb")])
+up = Array[ExtResource("3_ve1k7")]([SubResource("Resource_umv4t"), SubResource("Resource_ei5s2"), SubResource("Resource_2f4y0"), SubResource("Resource_bnjxb"), SubResource("Resource_yks4k"), SubResource("Resource_lj0cw"), SubResource("Resource_gk5h2")])
 down = Array[ExtResource("3_ve1k7")]([])
 
-[sub_resource type="Resource" id="Resource_bctiq"]
+[sub_resource type="Resource" id="Resource_lhx3g"]
 script = ExtResource("3_ve1k7")
-beat_ratio = 0.25
+beat_ratio = 0.125
 long_note = false
-note_type = 0
+note_type = 2
 text = ""
 
-[sub_resource type="Resource" id="Resource_qfoax"]
+[sub_resource type="Resource" id="Resource_80wm7"]
 script = ExtResource("3_ve1k7")
-beat_ratio = 0.25
+beat_ratio = 0.125
 long_note = false
-note_type = 0
+note_type = 1
 text = ""
 
-[sub_resource type="Resource" id="Resource_6lrc6"]
+[sub_resource type="Resource" id="Resource_n2bkt"]
 script = ExtResource("3_ve1k7")
-beat_ratio = 0.25
+beat_ratio = 0.125
 long_note = false
-note_type = 0
+note_type = 1
 text = ""
 
-[sub_resource type="Resource" id="Resource_umihu"]
+[sub_resource type="Resource" id="Resource_8ph6x"]
 script = ExtResource("3_ve1k7")
-beat_ratio = 0.25
+beat_ratio = 0.125
 long_note = false
-note_type = 0
+note_type = 1
+text = ""
+
+[sub_resource type="Resource" id="Resource_5jc0y"]
+script = ExtResource("3_ve1k7")
+beat_ratio = 0.0625
+long_note = false
+note_type = 1
+text = ""
+
+[sub_resource type="Resource" id="Resource_ltfow"]
+script = ExtResource("3_ve1k7")
+beat_ratio = 0.0625
+long_note = false
+note_type = 2
+text = ""
+
+[sub_resource type="Resource" id="Resource_rfd6u"]
+script = ExtResource("3_ve1k7")
+beat_ratio = 0.125
+long_note = false
+note_type = 1
+text = ""
+
+[sub_resource type="Resource" id="Resource_2lrsf"]
+script = ExtResource("3_ve1k7")
+beat_ratio = 0.125
+long_note = false
+note_type = 1
+text = ""
+
+[sub_resource type="Resource" id="Resource_uipn2"]
+script = ExtResource("3_ve1k7")
+beat_ratio = 0.125
+long_note = false
+note_type = 1
 text = ""
 
 [sub_resource type="Resource" id="Resource_88ayu"]
 script = ExtResource("2_31vpj")
-up = Array[ExtResource("3_ve1k7")]([SubResource("Resource_bctiq"), SubResource("Resource_qfoax"), SubResource("Resource_6lrc6"), SubResource("Resource_umihu")])
+up = Array[ExtResource("3_ve1k7")]([SubResource("Resource_lhx3g"), SubResource("Resource_80wm7"), SubResource("Resource_n2bkt"), SubResource("Resource_8ph6x"), SubResource("Resource_5jc0y"), SubResource("Resource_ltfow"), SubResource("Resource_rfd6u"), SubResource("Resource_2lrsf"), SubResource("Resource_uipn2")])
 down = Array[ExtResource("3_ve1k7")]([])
 
 [sub_resource type="Resource" id="Resource_iv125"]

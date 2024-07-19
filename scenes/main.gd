@@ -23,6 +23,7 @@ var _judge: = JudgementEngine.new()
 func _ready() -> void:
 	_initialize_judgement_engine()
 	_initialize_music()
+	_preload_data()
 
 
 func _process(_delta: float) -> void:
@@ -63,6 +64,13 @@ func _initialize_judgement_engine() -> void:
 
 	_judge.initialize(judgement_table)
 	_judge.hitted.connect(_handle_note_hit)
+
+
+func _preload_data() -> void:
+	# Preload the HitFeedback to avoid initial stuttering
+	var feedback = HitFeedback.instantiate()
+	_hit_feedbacks.add_child(feedback)
+	feedback.queue_free()
 
 
 func _process_time() -> void:
