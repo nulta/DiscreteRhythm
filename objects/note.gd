@@ -5,7 +5,7 @@ extends ColorRect
 
 const IDLE_COLOR = Color("#333333")
 const ACTIVE_COLOR = Color("#00ffcc")
-const UNTRIGGER_ANIM_TIME = 0.1
+const UNTRIGGER_ANIM_TIME = 0.2
 
 const SIZE_BASE_NOTE = 130
 const SIZE_MARGIN = 10
@@ -35,10 +35,11 @@ var space_note: int = 0:
 		long_note = value
 		_update_note_type()
 
-@export var triggered: bool = false:
+@export_range(0.0, 1.0)
+var trigger: float = 0.0:
 	set(value):
-		triggered = value
-		_update_triggered()
+		trigger = value
+		_update_trigger()
 
 @export_range(0.0, 1.0, 1/32.0)
 var beat_ratio: float = 1/4.0:  # <-- 1/4 beat
@@ -52,19 +53,15 @@ var text: String = "":
 		text = value
 		_update_note_type()
 
-var _triggered_transition: float = 0.0;
-
 
 func _ready():
 	set_process(false)
 	_update_note_type()
-	_update_triggered()
+	_update_trigger()
 	_update_size()
 
 
-func _process(delta: float):
-	_triggered_transition -= delta / UNTRIGGER_ANIM_TIME
-	_triggered_transition = max(0.0, _triggered_transition)
+func _process(_delta: float):
 	_update_color()
 
 
@@ -102,19 +99,31 @@ func _update_note_type():
 	%Text.text = text
 
 
-func _update_triggered():
-	if triggered:
-		_triggered_transition = 1.0
-	else:
-		set_process(true)		
+func _update_trigger():
+	if trigger > 0.0:
+		set_process(true)
 	_update_color()
 
 
 func _update_color():
-	color = IDLE_COLOR.lerp(ACTIVE_COLOR, _triggered_transition)
-	%Arrow.modulate = Color.WHITE.lerp(IDLE_COLOR, _triggered_transition)
-	if _triggered_transition == 0.0:
-		set_process(false)
+	if trigger > 0.0:
+		if long_note:
+			%LongNoteProgress.value = remap(ease(trigger, 1/5.0), 0.0, 1.0, 0.1, 1.0)
+		else:
+			color = ACTIVE_COLOR
+		%Arrow.modulate = IDLE_COLOR
+	else:
+		%LongNoteProgress.value = 0.0
+		if is_processing():
+			color = ACTIVE_COLOR
+			%Arrow.modulate = IDLE_COLOR
+			var tween = create_tween().set_parallel()
+			tween.tween_property(self, "color", IDLE_COLOR, UNTRIGGER_ANIM_TIME)
+			tween.tween_property(%Arrow, "modulate", Color.WHITE, UNTRIGGER_ANIM_TIME)
+			set_process(false)
+		else:
+			color = IDLE_COLOR
+			%Arrow.modulate = Color.WHITE
 
 
 func _update_size():

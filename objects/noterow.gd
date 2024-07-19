@@ -58,9 +58,9 @@ func get_note_ref_table() -> Array[NoteReference]:
 func _update_active_note() -> void:
 	for ref in _note_references:
 		if row_active and ref.beat_start <= current_beat and current_beat < ref.beat_end:
-			ref.node.triggered = true
+			ref.node.trigger = remap(current_beat, ref.beat_start, ref.beat_end, 0.0, 1.0)
 		else:
-			ref.node.triggered = false
+			ref.node.trigger = 0.0
 
 
 func _update_prefixes() -> void:
