@@ -1,9 +1,11 @@
 extends Node2D
 
+
 const HitDetail = JudgementEngine.HitDetail
 
 var hit: HitDetail = HitDetail.PERFECT
 var time: float = 0.0
+
 
 func _ready() -> void:
 	match hit:

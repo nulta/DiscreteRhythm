@@ -3,22 +3,8 @@ extends HBoxContainer
 class_name Noterow
 
 
-class NoteReference extends RefCounted:
-	var node: Note = null
-
-	## `beat_ratio` value where this note starts at.
-	var beat_start: float = 0.0
-
-	## `beat_ratio` value where this note ends at.
-	## The length of note is equal to `beat_end - beat_start`.
-	var beat_end: float = 0.0
-	
-	var note_type: NoteData.NoteType = NoteData.NoteType.NONE
-
-
 const NOTE_GAP = 10
 const NoteScn = preload("res://objects/note.tscn")
-
 
 @export var semi_rows: Array[SemiNoterow] = []:
 	set(value):
@@ -63,6 +49,10 @@ func _ready() -> void:
 	_create_notes()
 	_update_prefixes()
 	_update_active_note()
+
+
+func get_note_ref_table() -> Array[NoteReference]:
+	return _note_references
 
 
 func _update_active_note() -> void:
@@ -160,5 +150,14 @@ func _create_note(parent: Node, note_data: NoteData, beat_start: float) -> void:
 	_note_references.append(ref)
 
 
-func get_note_ref_table() -> Array[NoteReference]:
-	return _note_references
+class NoteReference extends RefCounted:
+	var node: Note = null
+
+	## `beat_ratio` value where this note starts at.
+	var beat_start: float = 0.0
+
+	## `beat_ratio` value where this note ends at.
+	## The length of note is equal to `beat_end - beat_start`.
+	var beat_end: float = 0.0
+	
+	var note_type: NoteData.NoteType = NoteData.NoteType.NONE

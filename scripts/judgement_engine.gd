@@ -1,10 +1,8 @@
 extends RefCounted
 class_name JudgementEngine
 
+
 signal hitted(detail: HitDetail, time_offset: float, note: Note)
-
-
-const NoteType = NoteData.NoteType
 
 enum HitDetail {
 	MISS,
@@ -13,12 +11,13 @@ enum HitDetail {
 	PERFECT,
 }
 
-var max_time_margin: float     = 4/24.0
-var time_margin_bad: float     = 3/24.0
-var time_margin_great: float    = 2/24.0
-var time_margin_perfect: float = 1/24.0
+const NoteType = NoteData.NoteType
 
-var judgement_time_offset = -0.02
+var max_time_margin:       = 4/24.0
+var time_margin_bad:       = 3/24.0
+var time_margin_great:     = 2/24.0
+var time_margin_perfect:   = 1/24.0
+var judgement_time_offset: = -0.02
 
 var _judgement_table: Array[JudgementItem] = []
 var _judgement_current: Array[JudgementItem] = []
@@ -27,32 +26,6 @@ var _judgement_current: Array[JudgementItem] = []
 func initialize(judgement_table: Array[JudgementItem]) -> void:
 	_judgement_table = judgement_table
 	_judgement_current = []
-
-
-func _get_current_press() -> Dictionary:
-	return {
-		NoteType.LEFT: Input.is_action_just_pressed("left_action"),
-		NoteType.LEFT_DOUBLE: Input.is_action_just_pressed("left_action"),  # TODO
-		NoteType.RIGHT: Input.is_action_just_pressed("right_action"),
-		NoteType.RIGHT_DOUBLE: Input.is_action_just_pressed("right_action"),  # TODO
-		NoteType.SPACE: Input.is_action_just_pressed("space_action"),
-		NoteType.LEFT_RIGHT:
-			Input.is_action_just_pressed("left_action")
-			and Input.is_action_just_pressed("right_action"),
-	}
-
-
-func _get_current_hold() -> Dictionary:
-	return {
-		NoteType.LEFT: Input.is_action_pressed("left_action"),
-		NoteType.LEFT_DOUBLE: Input.is_action_pressed("left_action"),  # TODO
-		NoteType.RIGHT: Input.is_action_pressed("right_action"),
-		NoteType.RIGHT_DOUBLE: Input.is_action_pressed("right_action"),  # TODO
-		NoteType.SPACE: Input.is_action_pressed("space_action"),
-		NoteType.LEFT_RIGHT:
-			Input.is_action_pressed("left_action")
-			and Input.is_action_pressed("right_action"),
-	}
 
 
 func process(current_time: float) -> void:
@@ -109,13 +82,39 @@ func miss(time_offset: float, item: JudgementItem) -> void:
 
 
 func handle_hit(time_offset: float, item: JudgementItem) -> void:
-	var abs_time = abs(time_offset)
+	var t = abs(time_offset)
 
-	if abs_time <= time_margin_perfect:
+	if t <= time_margin_perfect:
 		hitted.emit(HitDetail.PERFECT, time_offset, item.node)
-	elif abs_time <= time_margin_great:
+	elif t <= time_margin_great:
 		hitted.emit(HitDetail.GREAT, time_offset, item.node)
-	elif abs_time <= time_margin_bad:
+	elif t <= time_margin_bad:
 		hitted.emit(HitDetail.BAD, time_offset, item.node)
 	else:
 		miss(time_offset, item)
+
+
+func _get_current_press() -> Dictionary:
+	return {
+		NoteType.LEFT: Input.is_action_just_pressed("left_action"),
+		NoteType.LEFT_DOUBLE: Input.is_action_just_pressed("left_action"),  # TODO
+		NoteType.RIGHT: Input.is_action_just_pressed("right_action"),
+		NoteType.RIGHT_DOUBLE: Input.is_action_just_pressed("right_action"),  # TODO
+		NoteType.SPACE: Input.is_action_just_pressed("space_action"),
+		NoteType.LEFT_RIGHT:
+			Input.is_action_just_pressed("left_action")
+			and Input.is_action_just_pressed("right_action"),
+	}
+
+
+func _get_current_hold() -> Dictionary:
+	return {
+		NoteType.LEFT: Input.is_action_pressed("left_action"),
+		NoteType.LEFT_DOUBLE: Input.is_action_pressed("left_action"),  # TODO
+		NoteType.RIGHT: Input.is_action_pressed("right_action"),
+		NoteType.RIGHT_DOUBLE: Input.is_action_pressed("right_action"),  # TODO
+		NoteType.SPACE: Input.is_action_pressed("space_action"),
+		NoteType.LEFT_RIGHT:
+			Input.is_action_pressed("left_action")
+			and Input.is_action_pressed("right_action"),
+	}

@@ -1,13 +1,14 @@
 extends Node
 
-var left_keys:  = Array("qwertasdfgzxcvb".split()).map(OS.find_keycode_from_string)
-var right_keys: = Array("yuiophjkl;nm,./".split()).map(OS.find_keycode_from_string)
-var space_keys: = [KEY_SPACE]
-var key_dict: Dictionary = {}
 
 const LEFT_KEY = "left_action"
 const RIGHT_KEY = "right_action"
 const SPACE_KEY = "space_action"
+
+var left_keys:  = Array("qwertasdfgzxcvb".split()).map(OS.find_keycode_from_string)
+var right_keys: = Array("yuiophjkl;nm,./".split()).map(OS.find_keycode_from_string)
+var space_keys: = [KEY_SPACE]
+var key_dict: Dictionary = {}
 
 
 func _init() -> void:

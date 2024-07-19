@@ -1,6 +1,7 @@
 class_name NoteData
 extends Resource
 
+
 enum NoteType {
 	NONE = 0,
 	LEFT,

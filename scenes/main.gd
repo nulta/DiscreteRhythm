@@ -1,5 +1,6 @@
 extends Node2D
 
+
 const HitFeedback = preload("res://objects/hit_feedback.tscn")
 const NoteType = NoteData.NoteType
 const HitDetail = JudgementEngine.HitDetail
@@ -12,26 +13,24 @@ var _time_music_begin: float = 0.0
 var _time_music_delay: float = 0.0
 var _time_offset: float = 0.0
 
+var _judge: = JudgementEngine.new()
 @onready var _noteboard: = %Noteboard
 @onready var _music_player: = %MusicPlayer
 @onready var _camera: = %Camera
 @onready var _hit_feedbacks: = %HitFeedbacks
-var _judge: = JudgementEngine.new()
 
 
-func _get_current_row() -> int:
-	return floor(current_time/60 * bpm / beats_per_bar)
+func _ready() -> void:
+	_initialize_judgement_engine()
+	_initialize_music()
 
-func _get_row_progress() -> float:
-	return fmod(current_time/60 * bpm / beats_per_bar, 1.0)
 
-func _get_nth_row_node(n: int) -> Noterow:
-	var row_counts = _noteboard.get_child_count(false)
-
-	if n >= row_counts:
-		return null
-	else:
-		return _noteboard.get_child(n) as Noterow
+func _process(_delta: float) -> void:
+	_process_time()
+	_process_notes()
+	_process_camera()
+	_process_debug_keypress()
+	_judge.process(current_time)
 
 
 func _initialize_music() -> void:
@@ -74,7 +73,6 @@ func _process_time() -> void:
 
 func _process_notes() -> void:
 	var current_row: = _get_current_row()
-	var row_counts = _noteboard.get_child_count(false)
 	var current_row_node: = _get_nth_row_node(current_row)
 	var previous_row_node: = _get_nth_row_node(current_row - 1)
 
@@ -129,14 +127,18 @@ func _handle_note_hit(detail: HitDetail, t: float, node: Note) -> void:
 		_camera.punch_to()
 
 
-func _ready() -> void:
-	_initialize_judgement_engine()
-	_initialize_music()
+func _get_current_row() -> int:
+	return floor(current_time/60 * bpm / beats_per_bar)
 
 
-func _process(delta: float) -> void:
-	_process_time()
-	_process_notes()
-	_process_camera()
-	_process_debug_keypress()
-	_judge.process(current_time)
+func _get_row_progress() -> float:
+	return fmod(current_time/60 * bpm / beats_per_bar, 1.0)
+
+
+func _get_nth_row_node(n: int) -> Noterow:
+	var row_counts = _noteboard.get_child_count(false)
+
+	if n >= row_counts:
+		return null
+	else:
+		return _noteboard.get_child(n) as Noterow
