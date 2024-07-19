@@ -107,11 +107,11 @@ func _update_trigger():
 
 func _update_color():
 	if trigger > 0.0:
+		%Arrow.modulate = IDLE_COLOR
 		if long_note:
 			%LongNoteProgress.value = remap(ease(trigger, 1/5.0), 0.0, 1.0, 0.1, 1.0)
 		else:
 			color = ACTIVE_COLOR
-		%Arrow.modulate = IDLE_COLOR
 	else:
 		%LongNoteProgress.value = 0.0
 		if is_processing():
